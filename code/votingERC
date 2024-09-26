@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract Vote {
 
-//first entity
 struct Voter {
     string name;
     uint age;
@@ -16,7 +15,6 @@ struct Voter {
     address voterAddress; //EOA of the voter
 }
 
-//second entity
 struct Candidate {
     string name;
     string party;
@@ -27,7 +25,6 @@ struct Candidate {
     uint votes; //number of votes
 }
 
-//third entity
 address public electionCommission;
 address public winner;
 uint nextVoterId = 1;
@@ -55,8 +52,6 @@ modifier isVotingOver() {
   _;
 }
 
-// end time - 1720540700 - Tuesday, 9 July 2024 21:28:20
-// current time - 1720540861 - Tuesday, 9 July 2024 21:31:01
 
 modifier onlyCommissioner() {
     require(msg.sender==electionCommission,"Not authuorized");
